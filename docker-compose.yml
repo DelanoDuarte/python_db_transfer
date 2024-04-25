@@ -1,0 +1,51 @@
+version: '3.9'
+
+networks:
+  local:
+    driver: bridge
+
+services:
+  postgres_source:
+    image: postgres:14
+    ports:
+      - 5432:5432
+    volumes: 
+      - source:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=root
+      - POSTGRES_DB=source
+    networks:
+      - local
+
+  postgres_target:
+    image: postgres:14
+    ports:
+      - 5433:5432
+    volumes: 
+      - target:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=root
+      - POSTGRES_DB=target
+    networks:
+      - local
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "my.email@email.com"
+      PGADMIN_DEFAULT_PASSWORD: "root"
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres_source
+      - postgres_target
+    networks:
+      - local
+
+volumes:
+  source:
+    driver: local
+  target:
+    driver: local
