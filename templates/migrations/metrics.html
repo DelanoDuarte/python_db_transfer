@@ -1,0 +1,68 @@
+<div
+  id="metrics"
+  class="row rounded text-center py-4 g-4 bg-light counter-RANDOMID"
+>
+  <div class="col-6 col-lg-3">
+    <div class="d-flex justify-content-center mb-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        width="3em"
+        height="3em"
+        viewBox="0 0 24 24"
+        lc-helper="svg-icon"
+        fill="currentColor"
+      >
+        <path
+          d="M13,17V19H14A1,1 0 0,1 15,20H22V22H15A1,1 0 0,1 14,23H10A1,1 0 0,1 9,22H2V20H9A1,1 0 0,1 10,19H11V17H5V15.5C5,13.57 8.13,12 12,12C15.87,12 19,13.57 19,15.5V17H13M12,3A3.5,3.5 0 0,1 15.5,6.5A3.5,3.5 0 0,1 12,10A3.5,3.5 0 0,1 8.5,6.5A3.5,3.5 0 0,1 12,3Z"
+        ></path>
+      </svg>
+    </div>
+
+    <span
+      class="fw-bold display-5 mb-5"
+      data-vanilla-counter=""
+      data-start-at="0"
+      data-end-at="125"
+      data-time="1000"
+      data-delay="60"
+      data-format="{}"
+    >
+      {{ migrated_tables_count }}
+    </span>
+    <p class="lead" editable="inline">
+      <span><b>Tables</b></span> Migrated
+    </p>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="d-flex justify-content-center mb-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        width="3em"
+        height="3em"
+        viewBox="0 0 24 24"
+        lc-helper="svg-icon"
+        fill="currentColor"
+      >
+        <path
+          d="M16 17V19H2V17S2 13 9 13 16 17 16 17M12.5 7.5A3.5 3.5 0 1 0 9 11A3.5 3.5 0 0 0 12.5 7.5M15.94 13A5.32 5.32 0 0 1 18 17V19H22V17S22 13.37 15.94 13M15 4A3.39 3.39 0 0 0 13.07 4.59A5 5 0 0 1 13.07 10.41A3.39 3.39 0 0 0 15 11A3.5 3.5 0 0 0 15 4Z"
+        ></path>
+      </svg>
+    </div>
+    <span
+      class="fw-bold display-5 mb-5"
+      data-vanilla-counter=""
+      data-start-at="0"
+      data-end-at="53"
+      data-time="1000"
+      data-delay="60"
+      data-format="{}"
+    >
+      {{records_inserted_count}}
+    </span>
+    <p class="lead" editable="inline"><b>Records</b> Inserted</p>
+  </div>
+</div>

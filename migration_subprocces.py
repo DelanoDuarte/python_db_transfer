@@ -58,6 +58,9 @@ def restore_db(host, port, username, password, database, backup_path):
 
     # Execute the pg_restore command
     subprocess.run(command)
+    
+    # Remove file after finish
+    os.remove(backup_path)
 
 # Example usage
 if __name__ == "__main__":

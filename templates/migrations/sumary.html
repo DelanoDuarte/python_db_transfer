@@ -1,0 +1,101 @@
+<div class="row pt-4">
+  <h1 class="display-6">Transference Requested</h1>
+
+  <div class="col-md-8 col-sm-10 col-lg-6 p-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Source Connection</h5>
+        <div class="mb-3">
+          <label for="sourceHost" class="form-label">Host</label>
+          <input
+            type="text"
+            readonly
+            class="form-control"
+            id="sourceHost"
+            placeholder="localhost"
+            value="{{ data['sourceHost'] }}"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="sourcePort" class="form-label">Port</label>
+          <input
+            type="text"
+            readonly
+            class="form-control"
+            id="sourcePort"
+            placeholder="5432"
+            value="{{ data['sourcePort'] }}"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="sourceUsername" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sourceUsername"
+            readonly
+            value="{{ data['sourceUsername'] }}"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="sourcedb" class="form-label">Database Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="sourcedb"
+            readonly
+            value="{{ data['sourcedb'] }}"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8 col-sm-10 col-lg-6 p-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Target Connection</h5>
+
+        <div class="mb-3">
+          <label for="targetHost" class="form-label">Host</label>
+          <input type="text" class="form-control" id="targetHost" readonly />
+        </div>
+
+        <div class="mb-3">
+          <label for="targetPort" class="form-label">Port</label>
+          <input type="text" class="form-control" id="targetPort" readonly />
+        </div>
+
+        <div class="mb-3">
+          <label for="targetUsername" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="targetUsername"
+            readonly
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="targetdb" class="form-label">Database Name</label>
+          <input type="text" class="form-control" id="targetdb" readonly />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-md btn-success pt-2">Start</button>
+<button
+  type="button"
+  class="btn btn-md btn-secondary pt-2"
+  hx-get="/"
+  hx-boost="true"
+  hx-target="body"
+  hx-indicator="#loader"
+>
+  Reset
+</button>

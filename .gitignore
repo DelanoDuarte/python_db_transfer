@@ -4,3 +4,5 @@ lib
 
 *.dump
 *.cfg
+
+__pycache__
